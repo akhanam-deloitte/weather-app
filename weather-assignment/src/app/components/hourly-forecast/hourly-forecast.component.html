@@ -1,0 +1,10 @@
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="!error && hourly.length">
+  <h2>Hourly Forecast</h2>
+  <div *ngFor="let hour of hourly">
+    <span>{{ hour.time | date:'shortTime' }}</span>
+    <img [src]="hour.condition.icon" [alt]="hour.condition.text" />
+    <span>{{ displayTemp(hour.temp_c) }}</span>
+    <span>{{ hour.condition.text }}</span>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="!error && forecast.length">
+  <h2>5-Day Forecast</h2>
+  <div *ngFor="let day of forecast">
+    <div>
+      <strong>{{ day.date }}</strong>
+      <img [src]="day.day.condition.icon" [alt]="day.day.condition.text" />
+      <span>
+        High: {{ displayTemp(day.day.maxtemp_c) }}
+        Low: {{ displayTemp(day.day.mintemp_c) }}
+        {{ day.day.condition.text }}
+      </span>
+    </div>
+  </div>
+</div>

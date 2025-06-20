@@ -1,0 +1,7 @@
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="!error && temperature !== undefined">
+  <h2>Current Weather</h2>
+  <img [src]="iconUrl" alt="Weather Icon" />
+  <div>Temperature: {{ displayTemp(temperature) }}</div>
+  <div>{{ description }}</div>
+</div>

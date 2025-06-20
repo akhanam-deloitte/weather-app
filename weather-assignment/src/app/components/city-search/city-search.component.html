@@ -1,0 +1,11 @@
+<h2>Search Weather by City</h2>
+<input [(ngModel)]="city" placeholder="Enter city name" />
+<button (click)="search()" [disabled]="loading">Search</button>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="weather">
+  <h3>{{ weather.location.name }}, {{ weather.location.country }}</h3>
+  <img [src]="weather.current.condition.icon" [alt]="weather.current.condition.text" />
+  <div>Temperature: {{ displayTemp(weather.current.temp_c) }}</div>
+  <div>{{ weather.current.condition.text }}</div>
+</div>

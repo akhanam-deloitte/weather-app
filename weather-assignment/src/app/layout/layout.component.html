@@ -1,0 +1,15 @@
+<nav>
+    <ul style="list-style: none; padding: 0; display: flex; gap: 1rem;">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Current</a></li>
+        <li><a routerLink="/hourly" routerLinkActive="active">Hourly</a></li>
+        <li><a routerLink="/fiveday" routerLinkActive="active">5-Day</a></li>
+        <li><a routerLink="/search" routerLinkActive="active">Search</a></li>
+    </ul>
+    <app-unit-conversion-toggle></app-unit-conversion-toggle>
+</nav>
+
+<hr />
+
+<main>
+    <router-outlet></router-outlet>
+</main>
